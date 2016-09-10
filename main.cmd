@@ -9,4 +9,4 @@ git commit -m "init"
 git branch local
 git checkout local
 endlocal
-for /l %%f in (1,1,50) do (start pecker.cmd %%f)
+for /l %%f in (1,1,20) do (start pecker.cmd %%f)
