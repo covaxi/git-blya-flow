@@ -17,5 +17,4 @@ git push
 call sleep.cmd
 goto loop
 :end
-pause
 endlocal
