@@ -18,4 +18,5 @@ git push
 sleep 1
 goto loop
 :end
+exit
 endlocal
