@@ -9,13 +9,16 @@ set count=0
 :loop
 set /a count=%count%+1
 if %count% GTR 9 goto end
-echo 1 >> %id%.tmp
+echo %count% >> %id%.tmp
 git add %id%.tmp
 git commit -m "Adding file %id%. Commit #%count%" --author="%id%<%id%@some.site.com>" 
-git pull
-git commit --amend --author="%id%<%id%@some.site.com>" --no-edit
-git push
+:repeat
+git fetch
+git merge
+rem git commit --amend --author="%id%<%id%@some.site.com>" --no-edit
+git push || sleep 1 && goto :repeat
 sleep 1
+
 goto loop
 :end
 exit
